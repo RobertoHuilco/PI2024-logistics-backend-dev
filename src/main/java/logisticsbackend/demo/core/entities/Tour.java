@@ -9,6 +9,7 @@ import lombok.Data;
 import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
+import jakarta.validation.constraints.NotNull;
 
 import jakarta.persistence.ManyToOne;
 
@@ -18,14 +19,22 @@ public class Tour {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
+    @NotNull
     private String name;
+    @NotNull
     private String description;
+    @NotNull
     private Integer price;
+    @NotNull
     private Integer days_duration;
+    @NotNull
     private String sector;
+    @NotNull
     private Integer capacity_quotes;
     // private image
+    @NotNull
     private Date start_date;
+    @NotNull
     private Boolean enable;
 
     // * Relations*/

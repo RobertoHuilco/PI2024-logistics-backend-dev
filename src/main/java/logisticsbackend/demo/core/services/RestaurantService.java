@@ -1,7 +1,6 @@
 package logisticsbackend.demo.core.services;
 
 import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
@@ -37,11 +36,15 @@ public class RestaurantService {
     public ResponseEntity<Restaurant> updateById(long id, Restaurant restaurantUpdate) {
         try {
             Restaurant restaurantExist = findById(id);
-            if (restaurantExist == null)  return ResponseEntity.notFound().build();
+            if (restaurantExist == null)
+                return ResponseEntity.notFound().build();
             // Update each field
-            if (restaurantUpdate.getName() != null) restaurantExist.setName(restaurantUpdate.getName());
-            if (restaurantUpdate.getAddress() != null) restaurantExist.setAddress(restaurantUpdate.getAddress());
-            if (restaurantUpdate.getEnable() != null) restaurantExist.setEnable(restaurantUpdate.getEnable());
+            if (restaurantUpdate.getName() != null)
+                restaurantExist.setName(restaurantUpdate.getName());
+            if (restaurantUpdate.getAddress() != null)
+                restaurantExist.setAddress(restaurantUpdate.getAddress());
+            if (restaurantUpdate.getEnable() != null)
+                restaurantExist.setEnable(restaurantUpdate.getEnable());
             // Save Data
             Restaurant restaurantSave = save(restaurantExist);
             return ResponseEntity.ok(restaurantSave);

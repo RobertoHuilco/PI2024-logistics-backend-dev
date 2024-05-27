@@ -22,7 +22,7 @@ import logisticsbackend.demo.core.services.RestaurantService;
 @RequestMapping("api/v1")
 @CrossOrigin({ "*" })
 public class RestaurantController {
-    @Autowired
+     @Autowired
     private RestaurantService restaurantService;
 
     // CREATE
@@ -44,7 +44,7 @@ public class RestaurantController {
     }
 
     // DELETE
-    @DeleteMapping(value = "restaurants/{id}")
+    @DeleteMapping(value = "/restaurants/{id}")
     public void deleteById(@PathVariable long id) {
         restaurantService.deleteById(id);
     }
@@ -59,5 +59,5 @@ public class RestaurantController {
     @PatchMapping(value = "/restaurants/{id}")
     public ResponseEntity<Restaurant> updateById(@PathVariable long id, @RequestBody Restaurant restaurant) {
         return restaurantService.updateById(id, restaurant);
-    }
+    };
 }

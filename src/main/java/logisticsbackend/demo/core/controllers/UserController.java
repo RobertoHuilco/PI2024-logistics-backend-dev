@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
 @RestController
-@RequestMapping("api/vi")
+@RequestMapping("api/v1")
 @CrossOrigin({ "*" })
 public class UserController {
     @Autowired
